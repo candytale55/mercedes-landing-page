@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../frontend-template/assets"
+		},
+		{
+			"path": "../frontend-template/.vscode"
+		},
+		{
+			"path": "../frontend-template/docs"
+		}
+	],
+	"settings": {}
+}
