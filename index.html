@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mercedes Landing Page</title>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!--TODO: Delete unused font-weights, The font below should be Nuckle, but I'm cheap. Double check if Grotesk fits (footer)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/variables.css" />
   </head>
@@ -29,20 +42,106 @@
       </nav>
     </header>
     <main>
-      <section class="hero">I am Hero</section>
-      <section class="car-gallery">I am Car-Gallery</section>
-      <section class="dealerships"><!--TODO: Should they be nested inside or each have its own section-->
-        <p>I am dealerships</p>
-        <div class="dealer-white">I am the white section of dealerships</div>
-        <div class="dealer-map">I am the nightmap section of dealerships</div>
+
+      <!--Hero Section-->
+      <section class="hero">
+        <h2 class="section-title">New Mercedes CLS</h2>
+        <p>The power in your hands</p>
       </section>
-      <section class="features">I am the features section </section>
-      <section class="maybach-red">I am the Maybach Red as a Tentantion section</section>
-      <section class="maybach-wheels">I am the Maybach Wheels Section</section>
-      <section class="appointment">I am the appointment only section</section>
+
+
+      <!--Car Gallery Section-->
+      <section class="car-gallery">
+        <article class="card-container"> <!--TODO: Check if the card-container can be really reused in the features section-->
+          <h3>Electric</h3>
+          <p>Mercedes E450 Cabriolet</p>
+          <img src="./assets/images/2023-E450-Cabriolet.png" alt="2023 E450 Mercedes Cabriolet"><!--TODO: FIx alt-->
+          <div class="car-gal-container">
+            <a class="link-button" href="#">More Info</a>
+            <div class="color-container">
+              <div class="color-circle gray"></div>
+              <div class="color-circle red"></div>
+              <div class="color-circle blue"></div>
+              <div class="color-circle black"></div>
+            </div>
+          </div>
+        </article>
+        <!--TODO Add the rest of the car cards once the design is ok-->
+      </section>
+
+
+      
+      <section class="dealerships"><!--TODO: Should they be nested inside or each have its own section-->
+        <h2 class="section-title">Find the nearest Mercedes dealer to you.</h2>
+        <p>Browse over 1000 dealers worldwide, and find the one that best suits your situation.</p>
+        <div class="dealer-nightmap">
+          <div class="dealer-card-container">
+            <h2>Discover your local Mercedes partner store</h2>
+            <a href="#" class="link-button long-button">Find a partner store near you</a>
+          </div>
+        </div>
+      </section>
+
+      <!--Features Section-->
+      <section class="features">
+        <article class="card-container">
+          <h3>Confort</h3>
+          <img src="./assets/images/2021-mercedes-eqs-interior.jpg" alt="mercedes-eqs-interior"><!--TODO: improve alt-->
+          <a class="link-button" href="#">More Info</a>
+        </article>
+      </section>
+
+      <!--Maybach Red-->
+      <section class="maybach-red">
+        <h3>Red as tentation</h3>
+        <p>Good design is what drives us, and we're
+        proud to share that Mercedes-Maybach has
+        already won the prestigious Best Design 
+        Award 2023, as judged by the world's best
+        product designers.</p>
+      </section>
+
+      <!--Maybach Wheels-->
+      <section class="maybach-wheels">
+        <div class="container">
+          <h2>The Mercedes-Maybach wheel programme</h2>
+          <p>The exclusive Mercedes-Maybach wheel programme, e.g. with optional 53.3 cm (21") Maybach forged wheels in multi-spoke design.</p>
+          <a class="link-button" href="#">Learn More Info</a>
+        </div>
+        <img src="./assets/images/maybach-wheels.png" alt="Close-up to the Maybach Wheels"><!--TODO: Fix alt-->
+      </section>
+      
+      <!--Appointment Section-->
+      <section class="appointment">
+        <p>Ready to own the car of your dreams?. Mercedes-Maybach are now available in
+          available at our dealers by appointment only.</p>
+        <a class="link-button" href="#">Contact Now</a>
+      </section>
+    
     </main>
+
     <footer>
-      <section class="join-newsletter">I am the join-newsletter section</section>
+      <!-- Newsletter Section -->
+      <section class="join-newsletter">
+        <h3>Join the Power</h3>
+        <p>Sign up for our Newsletter</p>
+        <form action="POST"><!--TODO: Check the frigging form functionality carefully, I don't remember how to do this-->
+          <label for="email">Enter your email address here</label><!--TODO: Remember how to add text or the label inside the input-->
+          <input id="email" type="email" placeholder="Enter your email address here">
+          <button type="submit" class="btn">Subscribe</button>
+          <input id="checkbox" type="checkbox">
+          <label for="checkbox">By signing up, I agree to the <a href="#">privacy policy</a> of Veloretti.</label>
+        </form>
+        <div class="social-media container">
+          <ul><!--TODO: alt tags-->
+            <li><a href="#"><img src="./assets/images/icon-facebook.svg" alt="facebook icon"></a></li><!--TODO: the Anchor element must go outside the li?-->
+            <li><a href="#"><img src="./assets/images/icon-instagram.svg" alt="instagram icon"></a></li>
+            <li><a href="#"><img src="./assets/images/icon-youtube.svg" alt="YouTube icon"></a></li>
+            <li><a href="#"><img src="./assets/images/icon-linkedin.svg" alt="LinkedIn icon"></a></li>
+            <li><a href="#"><img src="./assets/images/icon-tiktok.svg" alt="TikTok icon"></a></li>
+          </ul>
+        </div>
+      </section>
       <section class="footer-nav">
         <nav class="footer-nav">
           <h4>Explorer</h4>

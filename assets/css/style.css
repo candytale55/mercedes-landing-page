@@ -4,7 +4,101 @@
 
 body {
   font-family: var(--font-family-base);
-  color: var(--primary-color);
+  background-color: var(--background);
+  color: var(--primary-text-color);
   margin: 0;
   line-height: 1.6;
+}
+
+
+/* TYPOGRAPHY */
+
+.section-title {
+  font-family: var(--font-family-titles);
+  font-weight: 400;
+}
+
+
+
+
+/* HERO Section */
+
+.hero {
+  background-image: url(../images/hero-image.jpeg); /*TODO: Accessibility for background images*/
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  color: var(--white-text);
+  text-transform: capitalize;
+}
+
+
+.card-container {
+  background-color: var(--card-background);
+}
+
+
+/* Car Gallery */
+
+.color-circle {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+
+.gray   { background-color: #C5C5C5;}
+.red    { background-color: #B20000;}
+.blue   { background-color: #0010A1;}
+.black  { background-color: black;}
+.yellow { background-color: #E2C324;}
+.blue-2 { background-color: #515F91;} /*TODO : Change name to class*/
+
+
+/* Dealership Section*/
+
+.dealer-nightmap {
+  background-image: url(../images/dealer-night-map.png); /*TODO: Accessibility for background images*/
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  color: var(--white-text);
+}
+
+/*TODO: This below is just to show the card. Nothing to do with the design*/
+.dealer-card-container {
+  background-color: gray;
+  opacity: 50%;
+}
+
+/* Features Section */
+
+
+/* Maybach RED Section*/
+
+.maybach-red {
+  background-image: url(../images/maybach-red.png);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  color: var(--white-text);
+}
+
+
+/* Mayback Wheel*/
+
+
+/* Appointment Section */
+
+.appointment {
+  background-color: var(--appointment-background);
+  color: var(--white-text);
+}
+
+
+/* footer */
+
+footer {
+  background-color: var(--footer-background);
+  font-family: var(--font-family-footer);
+  color: var(--white-text);
 }
