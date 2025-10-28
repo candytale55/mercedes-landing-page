@@ -1,0 +1,7 @@
+:root {
+  --primary-color: #111;
+  --secondary-color: #666;
+  --accent-color: #0070f3;
+  --font-family-base: "Inter", sans-serif;
+  --max-width: 1200px;
+}

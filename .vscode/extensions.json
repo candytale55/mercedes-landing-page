@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "ritwickdey.liveserver",
+    "esbenp.prettier-vscode",
+    "ecmel.vscode-html-css",
+    "htmlhint.vscode-htmlhint",
+    "naumovs.color-highlight",
+    "formulahendry.auto-rename-tag"
+  ]
+}
