@@ -21,7 +21,7 @@ body {
 
 /* Links */
 
-nav ul {
+nav ul, .social-media ul { /*TODO: Check if .social-media ul could be a nav ul*/
   list-style: none;
   margin: 0;
   padding: 0; 
@@ -47,6 +47,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-nav ul {
+  display: flex;
 }
 
 .header-nav a {
@@ -134,7 +138,17 @@ footer {
   background-color: var(--footer-background);
   font-family: var(--font-family-footer);
   color: var(--white-text);
+  text-align: center;
 }
+
+.social-media ul {
+  padding: 1em; 
+  display: flex;
+  max-width: 250px;
+  justify-content: space-around;
+  
+}
+
 
 .footer-nav a {
   color: var(--footer-color)
