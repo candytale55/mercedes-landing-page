@@ -1,5 +1,7 @@
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
 }
 
 body {
@@ -8,6 +10,10 @@ body {
   color: var(--primary-text-color);
   margin: 0;
   line-height: 1.6;
+}
+
+section {
+  padding: 2em 2em; 
 }
 
 
@@ -19,7 +25,45 @@ body {
 }
 
 
+
+
 /* Links */
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  cursor: pointer;
+}
+
+
+
+.link-button {
+  display: inline-block; 
+  padding: .75em 1.5em;
+  font-family: inherit;
+  background-color: var(--white);
+  border: none;
+  border-radius: 45px;
+  margin-top: 1em; 
+}
+
+/* Images (General) */
+
+.logo {
+  width: 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto; 
+}
+
+
+/* Navigation General*/
 
 nav ul, .social-media ul { /*TODO: Check if .social-media ul could be a nav ul*/
   list-style: none;
@@ -31,15 +75,9 @@ nav li {
   margin-right: 1.5rem;
 }
 
-nav a {
-  text-decoration: none;
+.toggle-navbar a {
+  display: none;
 }
-
-nav a:hover,
-nav a:focus {
-  cursor: pointer;
-}
-
 
 /* Navigation Bar (Header) */
 
@@ -47,6 +85,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: .5em 0; 
 }
 
 .header-nav ul {
@@ -63,24 +102,69 @@ header {
 .hero {
   background-image: url(../images/hero-image.jpeg); /*TODO: Accessibility for background images*/
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  background-position: center;
+  height: 60vh;
   color: var(--white-text);
   text-transform: capitalize;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 1em;
+}
+
+.hero h2 {
+  font-size: 3.2rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
 }
 
 
+
+
+
+/* TODO: This applies for card gallery and features */
+
 .card-container {
   background-color: var(--card-background);
+  border-radius: 10px;
+  max-width: 400px; /*TODO: Remove after adding grid or fledx*/
+  margin: 1em; 
 }
 
 
 /* Car Gallery */
 
+
+
+.car-gallery .card-container {
+  padding: 1em 1.2em; 
+  text-align: center;
+}
+
+.car-gal-container, .color-container {
+  display: flex;
+  justify-content: center; 
+  align-items: flex-end;
+}
+
+
+.car-gallery h3 {
+  font-size: 1.875rem;
+}
+
+.car-gallery p {
+  font-size: 1.3rem;
+}
+
 .color-circle {
   border-radius: 50%;
   height: 20px;
   width: 20px;
+  border: var(--white) solid 2px; 
+  margin-left: 1em;
+  display:none; 
 }
 
 .gray   { background-color: #C5C5C5;}
@@ -96,8 +180,8 @@ header {
 .dealer-nightmap {
   background-image: url(../images/dealer-night-map.png); /*TODO: Accessibility for background images*/
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  background-position: center;
+  height: 60vh;
   color: var(--white-text);
 }
 
@@ -115,8 +199,8 @@ header {
 .maybach-red {
   background-image: url(../images/maybach-red.png);
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  background-position: center;
+  height: 60vh;
   color: var(--white-text);
 }
 
@@ -147,6 +231,10 @@ footer {
   max-width: 250px;
   justify-content: space-around;
   
+}
+
+.footer-nav {
+  margin-top: 1.5em;
 }
 
 
