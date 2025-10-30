@@ -19,6 +19,39 @@ body {
 }
 
 
+/* Links */
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+}
+
+nav li {
+  margin-right: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  cursor: pointer;
+}
+
+
+/* Navigation Bar (Header) */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav a {
+  color: var(--primary-text-color);
+}
 
 
 /* HERO Section */
@@ -101,4 +134,8 @@ footer {
   background-color: var(--footer-background);
   font-family: var(--font-family-footer);
   color: var(--white-text);
+}
+
+.footer-nav a {
+  color: var(--footer-color)
 }
