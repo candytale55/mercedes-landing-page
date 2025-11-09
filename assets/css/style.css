@@ -1,9 +1,13 @@
-*, *::before, *::after {
+/* ===== GLOBAL RESET & BASE STYLES ===== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
+/* Base body styling with custom properties */
 body {
   font-family: var(--font-family-base);
   background-color: var(--background);
@@ -12,93 +16,154 @@ body {
   line-height: 1.6;
 }
 
+/* Default section padding for consistent spacing */
 section {
-  padding: 2em 2em; 
+  padding: 2em 2em;
 }
 
+/* ===== TYPOGRAPHY ===== */
 
-/* TYPOGRAPHY */
-
+/* Main section headings */
 .section-title {
   font-family: var(--font-family-titles);
   font-weight: 400;
 }
 
+/* ===== LINKS & BUTTONS ===== */
 
-
-
-/* Links */
-
+/* Remove default link styling */
 a {
   text-decoration: none;
 }
 
+/* Interactive states for links */
 a:hover,
 a:focus {
   cursor: pointer;
 }
 
-
-
+/* Styled button component used throughout site */
 .link-button {
-  display: inline-block; 
-  padding: .75em 1.5em;
+  display: inline-block;
+  padding: 0.75em 1.5em;
   font-family: inherit;
   background-color: var(--white);
   border: none;
   border-radius: 45px;
-  margin-top: 1em; 
+  margin-top: 1em;
 }
 
-/* Images (General) */
+/* ===== IMAGES ===== */
 
-.logo {
+/* Mercedes logo in header */
+.brand-logo {
   width: 20px;
 }
 
+/* Responsive image defaults */
 img {
   display: block;
   max-width: 100%;
-  height: auto; 
+  height: auto;
 }
 
+/* ===== NAVIGATION COMPONENTS ===== */
 
-/* Navigation General*/
-
-nav ul, .social-media ul { /*TODO: Check if .social-media ul could be a nav ul*/
+/* Remove default list styling for all navigation */
+/*TODO: Check if .social-media ul could be a nav ul*/
+nav ul,
+.social-media ul {
   list-style: none;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
+/* Default spacing between navigation items */
 nav li {
   margin-right: 1.5rem;
 }
 
-.toggle-navbar a {
-  display: none;
-}
+/* ===== HEADER NAVIGATION ===== */
 
-/* Navigation Bar (Header) */
-
+/* Main header container - flexbox layout */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5em 0; 
+  padding: .05em;
+  border: 2px red solid; /* Debug border - remove in production */
 }
 
-.header-nav ul {
+/* Primary navigation container (logo + menu items) */
+.main-nav {
   display: flex;
+  border: 2px orange solid; /* Debug border - remove in production */
 }
 
-.header-nav a {
+/* MOBILE-FIRST RESPONSIVE NAVIGATION */
+
+
+
+/* Mobile: Hide main navigation menu by default */
+.main-nav-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none; /* Hidden by default on mobile */
+  background-color: var(--background);
+}
+
+.menu-close svg{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+} 
+
+
+
+/* Navigation link styling */
+.main-nav-list a {
   color: var(--primary-text-color);
 }
 
+/* Secondary navigation (user icons, cart, burger menu) */
+.icon-nav-list {
+  display: flex;
+  border: 2px blueviolet solid; /* Debug border - remove in production */
+  align-items: center;
+}
 
-/* HERO Section */
+.icon-nav-list li {
+  margin-right: 1em;
+}
 
+.icon-nav-list li:last-child {
+  margin-right: 0;
+}
+
+
+
+/* TABLET & DESKTOP: Show horizontal navigation */
+@media (min-width: 768px) {
+  /* Show main navigation as horizontal flex */
+  .main-nav-list {
+    position: unset; /*TODO: Checar si unset es recomendable */
+    top: unset;
+    right: unset;
+    display: flex;
+    padding-left: 2em;
+    border: 2px pink solid; /* Debug border - remove in production */
+  }
+
+  /* Hide burger menu on larger screens */
+  .burger-menu, .menu-close {
+    display: none;
+  }
+}
+
+/* ===== HERO SECTION ===== */
+
+/* Full-width hero with background image */
 .hero {
   background-image: url(../images/hero-image.jpeg); /*TODO: Accessibility for background images*/
   background-size: cover;
@@ -106,77 +171,92 @@ header {
   height: 60vh;
   color: var(--white-text);
   text-transform: capitalize;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-end; /* Position text at bottom */
   padding-bottom: 1em;
 }
 
+/* Hero title styling */
 .hero h2 {
   font-size: 3.2rem;
 }
 
+/* Hero subtitle styling */
 .hero p {
   font-size: 1.5rem;
 }
 
+/* ===== CARD COMPONENTS ===== */
 
-
-
-
+/* Reusable card container (used in car gallery & features) */
 /* TODO: This applies for card gallery and features */
-
 .card-container {
   background-color: var(--card-background);
   border-radius: 10px;
-  max-width: 400px; /*TODO: Remove after adding grid or fledx*/
-  margin: 1em; 
+  max-width: 400px; /*TODO: Remove after adding grid or flex*/
+  margin: 1em;
 }
 
+/* ===== CAR GALLERY SECTION ===== */
 
-/* Car Gallery */
-
-
-
+/* Car gallery specific card styling */
 .car-gallery .card-container {
-  padding: 1em 1.2em; 
+  padding: 1em 1.2em;
   text-align: center;
 }
 
-.car-gal-container, .color-container {
+/* Flexbox containers for car info and color options */
+.car-gal-container,
+.color-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: flex-end;
 }
 
-
+/* Car gallery card titles */
 .car-gallery h3 {
   font-size: 1.875rem;
 }
 
+/* Car gallery card descriptions */
 .car-gallery p {
   font-size: 1.3rem;
 }
 
+/* Color selector circles (hidden by default) */
 .color-circle {
   border-radius: 50%;
   height: 20px;
   width: 20px;
-  border: var(--white) solid 2px; 
+  border: var(--white) solid 2px;
   margin-left: 1em;
-  display:none; 
+  display: none; /* Hidden until needed */
 }
 
-.gray   { background-color: #C5C5C5;}
-.red    { background-color: #B20000;}
-.blue   { background-color: #0010A1;}
-.black  { background-color: black;}
-.yellow { background-color: #E2C324;}
-.blue-2 { background-color: #515F91;} /*TODO : Change name to class*/
+/* Color options for car customization */
+.gray {
+  background-color: #c5c5c5;
+}
+.red {
+  background-color: #b20000;
+}
+.blue {
+  background-color: #0010a1;
+}
+.black {
+  background-color: black;
+}
+.yellow {
+  background-color: #e2c324;
+}
+.blue-2 {
+  background-color: #515f91;
+} /*TODO: Change name to class*/
 
+/* ===== DEALERSHIP SECTION ===== */
 
-/* Dealership Section*/
-
+/* Dealership finder with night map background */
 .dealer-nightmap {
   background-image: url(../images/dealer-night-map.png); /*TODO: Accessibility for background images*/
   background-size: cover;
@@ -185,17 +265,19 @@ header {
   color: var(--white-text);
 }
 
+/* Placeholder dealer card styling */
 /*TODO: This below is just to show the card. Nothing to do with the design*/
 .dealer-card-container {
   background-color: gray;
-  opacity: 50%;
+  opacity: 50%; /* Temporary placeholder styling */
 }
 
-/* Features Section */
+/* ===== FEATURES SECTION ===== */
+/* TODO: Add specific styles for features section */
 
+/* ===== MAYBACH RED SECTION ===== */
 
-/* Maybach RED Section*/
-
+/* Full-width Maybach showcase with red car background */
 .maybach-red {
   background-image: url(../images/maybach-red.png);
   background-size: cover;
@@ -204,20 +286,20 @@ header {
   color: var(--white-text);
 }
 
+/* ===== MAYBACH WHEELS SECTION ===== */
+/* TODO: Add specific styles for Maybach wheels section */
 
-/* Mayback Wheel*/
+/* ===== APPOINTMENT SECTION ===== */
 
-
-/* Appointment Section */
-
+/* Call-to-action section for appointments */
 .appointment {
   background-color: var(--appointment-background);
   color: var(--white-text);
 }
 
+/* ===== FOOTER ===== */
 
-/* footer */
-
+/* Main footer styling */
 footer {
   background-color: var(--footer-background);
   font-family: var(--font-family-footer);
@@ -225,19 +307,20 @@ footer {
   text-align: center;
 }
 
+/* Social media icons container */
 .social-media ul {
-  padding: 1em; 
+  padding: 1em;
   display: flex;
   max-width: 250px;
   justify-content: space-around;
-  
 }
 
+/* Footer navigation sections */
 .footer-nav {
   margin-top: 1.5em;
 }
 
-
+/* Footer navigation links */
 .footer-nav a {
-  color: var(--footer-color)
+  color: var(--footer-color);
 }
